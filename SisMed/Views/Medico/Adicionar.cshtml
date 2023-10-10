@@ -1,0 +1,46 @@
+﻿@model SisMed.Models.Entities.Medico
+
+@{
+    ViewData["Title"] = "Adicionar";
+}
+
+<section class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1>@ViewData["Title"]</h1>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="content">
+    <div class="row">
+        <div class="col-12">
+            @using (Html.BeginForm("Adicionar", "Medico", FormMethod.Post, new{id = "Id"}))
+            {
+                <div class="card">
+                    <div class="card-body">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Nome, "Nome", new{@class = "control-label col-md-3"})
+                            <div class="col-md-auto">
+                                @Html.EditorFor(model => model.Nome, "Nome", new { htmlAttributes = new{@class = "form-control"}})
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.CRM, "CRM", new{@class = "control-label col-md-3"})
+                            <div class="col-md-auto">
+                                @Html.EditorFor(model => model.CRM, "CRM", new { htmlAttributes = new{@class = "form-control"}})
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer text-right">
+                        <button class="btn btn-primary" type="submit">Salvar</button>
+                    </div>
+                </div>
+            }    
+        </div>
+    </div>
+</section>
+
